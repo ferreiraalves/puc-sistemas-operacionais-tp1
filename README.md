@@ -17,7 +17,7 @@ A10;17:00;CXX;D;C;2
 C04;14:30;CSX;T;M;5
 J07;17:00;CSX;T;R;7
 ```
-### output
+### Output
 ```
 REGULAR	J7	17:00	confirmou
 REGULAR	J7	17:00	ocupado - mudou para D6 e confirmou
