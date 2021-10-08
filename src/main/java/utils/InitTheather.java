@@ -16,7 +16,7 @@ public class InitTheather {
                 String key = String.valueOf((char)(i + 65));
                 theather.get(showtime).put(key, new HashMap<Integer, Seat>());
                 for (int j = 0; j<rc.getColumns();j++){
-                    theather.get(showtime).get(key).put(j, new Seat());
+                    theather.get(showtime).get(key).put(j, new Seat(key, j));
                 }
             }
         }

@@ -18,7 +18,7 @@ public class InputLine {
         actions = tokens[2];
         behavior = tokens[3];
         if (tokens[4].equals("C")){
-            client = Client.CINEMA_CLUB;
+            client = Client.CLUB;
         }else if (tokens[4].equals("M")){
             client = Client.HALF;
         }else{
