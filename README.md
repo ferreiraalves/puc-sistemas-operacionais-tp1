@@ -2,7 +2,7 @@
 
 Este programa processa simula o processamento de uma fila de vendas de um cinema. 
 A aplicação lê um conjunto de configurações do arquivo `config.txt`. 
-As entradas são lidas a partir do arquivo `input.txt`. Amobos seguem o formado especificado na definição do tp. 
+As entradas são lidas a partir do arquivo `input.txt`. Ambos seguem o formado especificado na definição do tp. 
 
 ## Instruções
 
