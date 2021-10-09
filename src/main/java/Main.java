@@ -33,6 +33,7 @@ public class Main {
                     Seat seat = Validations.findNewSeat(theather, line);
                     if (seat != null){
                         if(Validations.finishPurchase(line)){
+                            Purchase.processPurchase(theather, line);
                             out(line, "ocupado - mudou para " + seat.getId() + " e confirmou");
                         }else{                                                                          //gave up even with new seat available. Jerk!
                             out(line, "ocupado - mudou para " + seat.getId() + " mas desistiu");
