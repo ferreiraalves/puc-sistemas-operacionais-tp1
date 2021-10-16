@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather = InitTheather.getTheather();
-        ArrayList<InputLine> inputLines = ReadInput.readImput();
+        ArrayList<InputLine> inputLines = ReadInput.readInput();
         HashMap<String, Sale> report = new HashMap<String, Sale>();
 
         for (String showtime : theather.keySet()){          // initialize report modeling

@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ReadInput {
 
 
-    public static ArrayList<InputLine> readImput(){
+    public static ArrayList<InputLine> readInput(){
 
         //This reads the input files, parses into InputLine class and returns as array
         ArrayList<InputLine> lines = new ArrayList<>();
