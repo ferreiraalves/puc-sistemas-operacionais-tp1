@@ -1,18 +1,21 @@
 # puc-sistemas-operacionais-tp1
 
-Este programa processa simula o processamento de uma fila de vendas de um cinema. 
-A aplicação lê um conjunto de configurações do arquivo `config.txt`. 
-As entradas são lidas a partir do arquivo `input.txt`. Ambos seguem o formado especificado na definição do tp. 
+Este programa processa simula o processamento de uma fila de vendas de um cinema.
+A aplicação lê um conjunto de configurações do arquivo `config.txt`.
+As entradas são lidas a partir do arquivo `input.txt`. Ambos seguem o formato especificado na definição do tp.
 
 ## Instruções
 
 Basta abrir o projeto como projeto maven. Por enquanto não existem dependências. O projeto possui duas execuções distintas.
 
-O arquivo `Main.java` apresenta uma execução sem existência de priorização. Ou seja, as entradas são processadas a medida que são recebidas pela aplicação (fifo).
+O arquivo `Main.java` apresenta uma execução sem existência de priorização. Ou seja, as entradas são processadas à medida que são recebidas pela aplicação (fifo).
 
 O arquivo `Priority.java`, por sua vez, apresenta uma execução seguindo as regras de negócio apresentadas na definição do TP.
 Para que as regras sejam respeitadas, separamos as entradas em três filas distintas (`club`,`half`e `regular`) e processamos os dados de acordo
-com suas regras epecificas (club primeiro, half até 40% de lotação, etc..)
+com suas regras específicas (club primeiro, half até 40% de lotação, etc..)
+
+Além disso existe um arquivo `GenerateTestFile.java`, capaz de gerar um arquivo de entrada com valores aleatórios para testar o sistema.
+O número de linhas geradas pode ser configurada a partir de uma variável interna. Valores de geração aleatória também podem ser alterados.
 
 ## Exemplo de execução
 ### Input
@@ -25,11 +28,11 @@ J07;17:00;CSX;T;R;7
 ```
 ### Output
 ```
-Client 0	REGULAR	J7	17:00	confirmou
-Client 1	REGULAR	J7	17:00	ocupado - mudou para D12 e confirmou
-Client 2	CLUB	A10	17:00	desistiu
-Client 3	HALF	C4	14:30	desistiu
-Client 4	REGULAR	J7	17:00	ocupado - mudou para H13 mas desistiu
+Client 0 REGULAR J7 17:00 confirmou
+Client 1 REGULAR J7 17:00 ocupado - mudou para D12 e confirmou
+Client 2 CLUB A10 17:00 desistiu
+Client 3 HALF C4 14:30 desistiu
+Client 4 REGULAR J7 17:00 ocupado - mudou para H13 mas desistiu
 
 #########REPORT POR SESSÃO#########
 
