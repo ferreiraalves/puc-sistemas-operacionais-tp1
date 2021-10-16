@@ -12,4 +12,8 @@ public class Purchase {
         seat.setClient(line.getClient());
         seat.setStatus(SeatStatus.SOLD);
     }
+
+    public static void processPurchase(Seat seat){
+        seat.setStatus(SeatStatus.SOLD);
+    }
 }

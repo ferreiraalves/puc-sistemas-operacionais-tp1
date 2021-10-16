@@ -48,9 +48,9 @@ public class Validations {
         ReadConfig rc = new ReadConfig();
         Random random = new Random();
         for (int i = 0; i< 5; i++){             // tries to find new seat 5 times
-            Integer rand = random.nextInt(rc.getRows()-1);
+            Integer rand = random.nextInt(rc.getRows());
             String row = String.valueOf((char)(rand + 65));         //Generates a random row
-            Integer column = random.nextInt(rc.getColumns()-1);       //Generates a random column
+            Integer column = random.nextInt(rc.getColumns());       //Generates a random column
             Seat seat = findSeat(theather, line.getShowtime(), row, column);
             if (seat.getStatus() == SeatStatus.FREE){           //found a vacant seat. NICE!
                 return seat;
