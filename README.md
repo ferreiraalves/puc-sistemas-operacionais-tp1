@@ -87,14 +87,17 @@ No entanto, ao considerarmos as regras de negócio apresentadas podemos fazer um
 Neste caso a expressão regular abaixo foi utilizada:
 
 ```regex
-(CLUB|HALF).*não encontrou outro
+(CLUB|HALF).*(ocupado - desistiu|ocupado - não encontrou)
 ```
 
-Ou seja, estamos contabilizando quantos clientes CLUB e MEIA ENTRADA que não conseguiram encontrar lugar devido a lotação.
-No caso da execução fifo, tivemos 22 (16 dos quais são CLUB) casos em que isto ocorreu dentre os 317 clientes que se encaixam nestas categorias.
+Ou seja, estamos contabilizando quantos clientes CLUB e MEIA ENTRADA que desistiram ou não conseguiram encontrar lugar devido a lotação.
+No caso da execução fifo, tivemos 60 (39 dos quais são CLUB) casos em que isto ocorreu dentre os 317 clientes que se encaixam nestas categorias.
 
-Já na execução por prioridade, tivemos apenas 9 desses casos. No entanto, todas as ocorrências ocorreram para casos de meia entrada acima do limite de 40%.
-Portanto, podemos considerar que este tipo de execução consegue respeitar a devida prioridade dos casos do CLUBE de meia entrada.
+Já na execução por prioridade, tivemos apenas 33 desses casos. No entanto, a maior parte das ocorrências ocorreram para casos de meia entrada acima do limite de 40%.
+Ao considerarmos apenas os clientes CLUB, apenas 8 não conseguiram assistir a sua sessão, sendo que todos desistiram após a primeira consulta.
+Ou seja, todos os clientes CLUB que procuraram novos lugares foram capazes de encontrar um disponível.
+
+Portanto, podemos considerar que este tipo de execução consegue respeitar a devida prioridade dos casos do CLUB e MEIA ENTRADA.
 
 ## Conclusão
 
