@@ -1,12 +1,13 @@
 import models.InputLine;
 import models.Sale;
 import models.Seat;
-import utils.*;
-
+import utils.GenerateReport;
+import utils.InitTheather;
+import utils.ProcessLine;
+import utils.ReadInput;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 
 public class Main {
 

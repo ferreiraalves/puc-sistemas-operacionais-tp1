@@ -11,7 +11,7 @@ public class Sale {
         ReadConfig rc = new ReadConfig();
         sales = 0;
         time = 0;
-        totalSeats = rc.getColumns() * rc.getRows() * rc.getShowtimes().length;
+        totalSeats = rc.getColumns() * rc.getRows();
     }
 
     public Integer getSales() {
