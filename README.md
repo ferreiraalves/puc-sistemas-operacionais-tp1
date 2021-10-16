@@ -20,8 +20,31 @@ J07;17:00;CSX;T;R;7
 ### Output
 ```
 REGULAR	J7	17:00	confirmou
-REGULAR	J7	17:00	ocupado - mudou para D6 e confirmou
+REGULAR	J7	17:00	ocupado - mudou para J2 e confirmou
 CLUB	A10	17:00	desistiu
 HALF	C4	14:30	desistiu
-REGULAR	J7	17:00	ocupado - mudou para A9 mas desistiu
+REGULAR	J7	17:00	ocupado - mudou para C15 mas desistiu
+
+#########REPORT POR SESSÃO#########
+
+Sessão : 17:00
+Vendas: 2
+Assentos: 600
+Percentual vendido: 0.33%
+
+Sessão : 20:30
+Vendas: 0
+Assentos: 600
+Percentual vendido: 0.00%
+
+Sessão : 14:30
+Vendas: 0
+Assentos: 600
+Percentual vendido: 0.00%
+
+#########REPORT GLOBAL#########
+
+Vendas: 2
+Assentos: 1800
+Percentual vendido: 0.11%
 ```
