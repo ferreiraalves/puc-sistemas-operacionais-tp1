@@ -8,9 +8,9 @@ public class Generator {
     private static Random random = new Random();
 
     public static String randomSeat(){
-        Integer rand = random.nextInt(rc.getRows());
+        Integer rand = random.nextInt(rc.getRows() - 1 );
         String row = String.valueOf((char)(rand + 65));
-        Integer column = random.nextInt(rc.getColumns());
+        Integer column = random.nextInt(rc.getColumns() - 1);
         return row + String.format("%02d", column);
     }
 
