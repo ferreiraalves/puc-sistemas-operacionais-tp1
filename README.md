@@ -58,3 +58,45 @@ Vendas: 2
 Assentos: 1800
 Percentual vendido: 0.11%
 ```
+
+## Análise
+Dado um mesmo conjunto de entradas, totalizando 1000 linhas geradas aleatoriamente, as execuções do sistema apresentaram os seguintes relatórios globais:
+
+### Fifo
+```
+#########REPORT GLOBAL#########
+
+Tempo de simulação: 4903
+Vendas: 546
+Assentos: 600
+Percentual vendido: 91.00%
+```
+
+### Prioridade
+```
+#########REPORT GLOBAL#########
+
+Tempo de simulação: 4903
+Vendas: 532
+Assentos: 600
+Percentual vendido: 88.67%
+```
+
+Portanto , inicialmente podemos considerar o execução fifo como melhor, já que foi capaz de vender mais ingressos.
+No entanto, ao considerarmos as regras de negócio apresentadas podemos fazer uma análise distinta a partir do processamento de logs.
+Neste caso a expressão regular abaixo foi utilizada:
+
+```regex
+(CLUB|HALF).*não encontrou outro
+```
+
+Ou seja, estamos contabilizando quantos clientes CLUB e MEIA ENTRADA que não conseguiram encontrar lugar devido a lotação.
+No caso da execução fifo, tivemos 22 (16 dos quais são CLUB) casos em que isto ocorreu dentre os 317 clientes que se encaixam nestas categorias.
+
+Já na execução por prioridade, tivemos apenas 9 desses casos. No entanto, todas as ocorrências ocorreram para casos de meia entrada acima do limite de 40%.
+Portanto, podemos considerar que este tipo de execução consegue respeitar a devida prioridade dos casos do CLUBE de meia entrada.
+
+## Conclusão
+
+Apesar de gerar uma venda maior de ingressos, o modelo Fifo não é ideal no caso apresentado pois poderia gerar uma insatisfação muito grande em clientes prioritários. Para a demanda apresentada no trabalho,
+nosso grupo sugere a utilização do sistema de prioridades pois ele é capaz de respeitar as regras de prioridade dos clientes CLUB e MEIA ENTRADA.
