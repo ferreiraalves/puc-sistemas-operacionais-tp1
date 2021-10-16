@@ -47,12 +47,12 @@ public class Validations {
     public static Seat findNewSeat(HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, InputLine line) {
         ReadConfig rc = new ReadConfig();
         Random random = new Random();
-        for (int i = 0; i< 5; i++){
-            Integer rand = random.nextInt(rc.getRows());// tries to find new seat 5 times
-            String row = String.valueOf((char)(rand + 65));
-            Integer column = random.nextInt(rc.getColumns());
+        for (int i = 0; i< 5; i++){             // tries to find new seat 5 times
+            Integer rand = random.nextInt(rc.getRows());
+            String row = String.valueOf((char)(rand + 65));         //Generates a random row
+            Integer column = random.nextInt(rc.getColumns());       //Generates a random column
             Seat seat = findSeat(theather, line.getShowtime(), row, column);
-            if (seat.getStatus() == SeatStatus.FREE){    //found a vacant seat. NICE!
+            if (seat.getStatus() == SeatStatus.FREE){           //found a vacant seat. NICE!
                 return seat;
             }
         }
