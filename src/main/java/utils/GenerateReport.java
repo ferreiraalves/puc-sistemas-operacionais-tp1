@@ -11,8 +11,9 @@ public class GenerateReport {
         System.out.println("#########REPORT POR SESSÃO#########");
         System.out.println();
 
-        Integer globalSales = 0;
-        Integer globalSeats = 0;
+        int globalSales = 0;
+        int globalSeats = 0;
+        int globalTime = 0;
 
         for (String showtime : report.keySet()){
             Integer sales =  report.get(showtime).getSales();
@@ -26,14 +27,15 @@ public class GenerateReport {
 
             globalSales += sales;               // Cathes a ride on Hashmap iteration to calculate global stats
             globalSeats += seats;
+            globalTime += report.get(showtime).getTime();
         }
 
         System.out.println("#########REPORT GLOBAL#########");
         System.out.println();
+        System.out.println("Tempo de simulação: " + globalTime);
         System.out.println("Vendas: " + globalSales);
         System.out.println("Assentos: " + globalSeats);
-
-        System.out.println("Percentual vendido: " + String.format("%.02f", globalSales.floatValue()/globalSeats.floatValue()*100) + "%");
+        System.out.println("Percentual vendido: " + String.format("%.02f", (float) globalSales / (float) globalSeats *100) + "%");
 
     }
 }

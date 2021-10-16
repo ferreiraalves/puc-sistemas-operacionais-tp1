@@ -40,6 +40,7 @@ public class ProcessLine {
                 out(line, "ocupado - desistiu");
             }
         }
+        report.get(line.getShowtime()).addTime(line.getTime());
     }
 
 }
