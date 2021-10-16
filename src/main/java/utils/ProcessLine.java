@@ -9,7 +9,8 @@ import java.util.HashMap;
 public class ProcessLine {
 
     private static void out(InputLine line, String status){                 // formats log output
-        System.out.println(line.getClient() + "\t" + line.getSeatKey() + line.getSeatNumber() + "\t" + line.getShowtime() + "\t" + status);
+        System.out.println("Client " + line.getIndex()  + "\t" + line.getClient() + "\t" + line.getSeatKey()
+                + line.getSeatNumber() + "\t" + line.getShowtime() + "\t" + status);
     }
 
     public static void processLine(InputLine line, HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, HashMap<String, Sale> report){

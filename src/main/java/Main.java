@@ -20,10 +20,10 @@ public class Main {
             report.put(showtime, new Sale());
         }
 
-        for (InputLine line : inputLines){
+        for (InputLine line : inputLines){                  // processes input lines as fifo
             ProcessLine.processLine(line, theather, report);
-
         }
+
         GenerateReport.generateReport(report);
 
     }

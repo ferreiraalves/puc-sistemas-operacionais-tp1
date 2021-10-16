@@ -31,5 +31,9 @@ public class Sale {
     public void registerSale() {
         this.sales++;
     }
+
+    public float getPercentage(){
+        return sales.floatValue()/totalSeats.floatValue();
+    }
 }
 

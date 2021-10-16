@@ -3,6 +3,7 @@ package models;
 import enums.Client;
 
 public class InputLine {
+    Integer index;
     String seatKey;
     Integer seatNumber;
     String showtime;
@@ -11,7 +12,8 @@ public class InputLine {
     Client client;
     Integer time;
 
-    public InputLine(String[] tokens) {
+    public InputLine(String[] tokens, Integer index) {
+        this.index = index;
         seatNumber = Integer.valueOf(tokens[0].replaceAll("\\D+", ""));
         seatKey = String.valueOf(tokens[0].charAt(0));
         showtime = tokens[1];
@@ -81,6 +83,14 @@ public class InputLine {
 
     public void setTime(Integer time) {
         this.time = time;
+    }
+
+    public Integer getIndex() {
+        return index;
+    }
+
+    public void setIndex(Integer index) {
+        this.index = index;
     }
 }
 

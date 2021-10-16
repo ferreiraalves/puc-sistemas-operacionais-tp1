@@ -11,7 +11,7 @@ public class ReadInput {
 
 
     public static ArrayList<InputLine> readInput(){
-
+        Integer index = 0;
         //This reads the input files, parses into InputLine class and returns as array
         ArrayList<InputLine> lines = new ArrayList<>();
         try {
@@ -20,7 +20,8 @@ public class ReadInput {
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 String[] tokens = data.split(";");
-                lines.add(new InputLine(tokens)) ;
+                lines.add(new InputLine(tokens, index)) ;
+                index++;
             }
             myReader.close();
         } catch (FileNotFoundException e) {
