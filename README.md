@@ -1,4 +1,4 @@
-# puc-sistemas-operacionais-tp1
+# [puc-sistemas-operacionais-tp1](https://github.com/ferreiraalves/puc-sistemas-operacionais-tp1)
 
 Este programa processa simula o processamento de uma fila de vendas de um cinema.
 A aplicação lê um conjunto de configurações do arquivo `config.txt`.
