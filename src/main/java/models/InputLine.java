@@ -11,6 +11,7 @@ public class InputLine {
     String behavior;
     Client client;
     Integer time;
+    Integer nextClient;
 
     public InputLine(String[] tokens, Integer index) {
         this.index = index;
@@ -27,6 +28,7 @@ public class InputLine {
             client = Client.REGULAR;
         }
         time = Integer.valueOf(tokens[5]);
+        nextClient = Integer.valueOf(tokens[6]);
     }
 
     public String getSeatKey() {
@@ -91,6 +93,14 @@ public class InputLine {
 
     public void setIndex(Integer index) {
         this.index = index;
+    }
+
+    public Integer getNextClient() {
+        return nextClient;
+    }
+
+    public void setNextClient(Integer nextClient) {
+        this.nextClient = nextClient;
     }
 }
 

@@ -35,6 +35,15 @@ public class Validations {
         }
     }
 
+    public static boolean isSeatFree(HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, InputLine inputLine, Integer clientId){
+        Seat seat = findSeat(theather, inputLine);          //checks if seat is free
+        if (seat.getStatus() == SeatStatus.FREE || seat.getClientId() == clientId){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public static boolean finishPurchase(InputLine line) {
         String actions = line.getActions();             //checks if client finished purchase
         if (actions.toLowerCase().contains("x")){

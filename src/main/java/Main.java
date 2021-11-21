@@ -1,10 +1,8 @@
 import models.InputLine;
 import models.Sale;
 import models.Seat;
-import utils.GenerateReport;
-import utils.InitTheather;
-import utils.ProcessLine;
-import utils.ReadInput;
+import models.Totem;
+import utils.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,15 +15,26 @@ public class Main {
         ArrayList<InputLine> inputLines = ReadInput.readInput();
         HashMap<String, Sale> report = new HashMap<String, Sale>();
 
+        int ticks = 0;
+        int nextClient = 0;
+
         for (String showtime : theather.keySet()){          // initialize report modeling
             report.put(showtime, new Sale());
         }
 
-        for (InputLine line : inputLines){                  // processes input lines as fifo
-            ProcessLine.processLine(line, theather, report);
+        while (!inputLines.isEmpty()){
+            Totem freeTotem = TotemUtils.findEmptyTotem();
+            if (freeTotem != null && nextClient <= 0){              // checks if there's a free totem and if new client has arrived
+                InputLine currentLine = inputLines.remove(0);
+                freeTotem.start(currentLine, Validations.findSeat(theather,currentLine));   //assigns client to totem, reserves seat
+                nextClient = currentLine.getNextClient();                                   //updates when the next client will arrive
+            }
+            nextClient --;                              //
+            TotemUtils.tick(theather, report);         //   These move simulation time forward
+            ticks++;
         }
 
-        GenerateReport.generateReport(report);
+        GenerateReport.generateReport(report, ticks);
 
     }
 }
