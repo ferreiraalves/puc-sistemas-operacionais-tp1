@@ -10,7 +10,7 @@ public class ReadConfig {
     Integer rows;
     Integer columns;
     String[] showtimes;
-    Integer tokens;
+    Integer totems;
 
     public ReadConfig() {
         try {
@@ -25,7 +25,7 @@ public class ReadConfig {
             showtimes = data.split(",");
 
             data = myReader.nextLine();
-            tokens = parseInt(data);
+            totems = parseInt(data);
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
@@ -57,11 +57,11 @@ public class ReadConfig {
         this.showtimes = showtimes;
     }
 
-    public Integer getTokens() {
-        return tokens;
+    public Integer getTotems() {
+        return totems;
     }
 
-    public void setTokens(Integer tokens) {
-        this.tokens = tokens;
+    public void setTotems(Integer totems) {
+        this.totems = totems;
     }
 }
