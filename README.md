@@ -106,8 +106,9 @@ nosso grupo sugere a utilização do sistema de prioridades, pois ele é capaz d
 
 
 # Fase 2
+https://github.com/ferreiraalves/puc-sistemas-operacionais-tp1/tree/totem-simulation
 
-Nesta etapa, o é necessário realizar uma simulação do parelismo entre vários terminais de atendimento. Para tanto uma nova classe `Totem` foi implementada. 
+Nesta etapa, foi necessário realizar uma simulação do parelismo entre vários terminais de atendimento. Para tanto uma nova classe `Totem` foi implementada. 
 Esta classe se torna responsável pelo gerenciamento dos atendimentos, sendo que cada totem só pode iniciar um atendimento após finalizar o atual.
 
 ## Alterações
@@ -151,3 +152,6 @@ Client 9	Totem 1		REGULAR		H2		20:30		confirmou
 Iterações: 66
 Tempo simulado: 1:06
 ```
+
+## Análise
+O arquivo de entrada utilizada é o atualmente presente no repositório.
