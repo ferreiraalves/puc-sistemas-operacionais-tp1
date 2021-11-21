@@ -104,11 +104,10 @@ Portanto, podemos considerar que este tipo de execução consegue respeitar a de
 Apesar de gerar uma venda maior de ingressos, o modelo Fifo não é ideal no caso apresentado pois poderia gerar uma insatisfação muito grande em clientes prioritários. Para a demanda apresentada no trabalho,
 nosso grupo sugere a utilização do sistema de prioridades, pois ele é capaz de respeitar as regras de prioridade dos clientes CLUB e MEIA ENTRADA.
 
-
 # Fase 2
 https://github.com/ferreiraalves/puc-sistemas-operacionais-tp1/tree/totem-simulation
 
-Nesta etapa, foi necessário realizar uma simulação do parelismo entre vários terminais de atendimento. Para tanto uma nova classe `Totem` foi implementada. 
+Nesta etapa, foi necessário realizar uma simulação do paralelismo entre vários terminais de atendimento. Para tanto uma nova classe `Totem` foi implementada.
 Esta classe se torna responsável pelo gerenciamento dos atendimentos, sendo que cada totem só pode iniciar um atendimento após finalizar o atual.
 
 ## Alterações
@@ -154,4 +153,26 @@ Tempo simulado: 1:06
 ```
 
 ## Análise
-O arquivo de entrada utilizada é o atualmente presente no repositório.
+O arquivo de entrada utilizado é o atualmente presente no repositório. O arquivo conta com 1000 entradas geradas aleatoriamente.
+A simulação foi executada utilizando quantidades de totens distintos. Serão comparados o número de iterações necessárias para finalizar os atendimentos em cada um dos casos.
+Os resultados podem ser observados na tabela abaixo:
+
+|Terminais | Ticks | Tempo | Delta | Delta % |
+---|---|---|---|--- 
+|1 | 6588 | 109:48 |   |
+|2 | 5225 | 87:05 | 1363 | 20.69%|
+|3 | 5084 | 84:44 | 141 | 2.70%|
+|4 | 5074 | 84:34 | 10 | 0.20%|
+|5 | 5074 | 84:34 | 0 | 0.00%|
+
+![Screenshot](img/ntotem-vs-ticks.png)
+
+## Conclusão
+
+Com base nos resultados, podemos perceber que o experimento foi bem sucedido. Ao aumentarmos o número de terminais, reduzimos o tempo necessário para realizar o processamento das entradas.
+
+Em relação a questão do número ideal de totens levantada na proposta desta etapa, percebemos que a adição de novos terminais de atendimento possui retornos reduzidos. Ou seja, a partir de um determinado número de terminais, não existem ganhos nas métricas.
+Em nosso experimento a adição do terminal número 5 demonstra isso com clareza, pois apresentou os mesmos resultados da simulação realizada com 4 terminais. Com isso, percebemos que os ganhos significativos ocorreram ao utilizarmos 2 ou 3 terminais. Sendo que o ganho com 3 terminais foi consideravelmente menor.
+
+Sendo assim a recomendação do grupo é que sejam instalados 2 terminais de atendimento, pois novos terminais subsequentes podem não valer o custo com base no benefício apresentado.
+É possível que a instalação de um terceiro terminal faça sentido, mas deve-se analisar se o custo justifica um ganho de apenas 2.70%.
