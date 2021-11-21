@@ -1,4 +1,7 @@
-# [puc-sistemas-operacionais-tp1](https://github.com/ferreiraalves/puc-sistemas-operacionais-tp1)
+# puc-sistemas-operacionais-tp1
+
+# Fase 1
+https://github.com/ferreiraalves/puc-sistemas-operacionais-tp1/tree/phase-1
 
 Este programa processa simula o processamento de uma fila de vendas de um cinema.
 A aplicação lê um conjunto de configurações do arquivo `config.txt`.
@@ -105,7 +108,7 @@ Apesar de gerar uma venda maior de ingressos, o modelo Fifo não é ideal no cas
 nosso grupo sugere a utilização do sistema de prioridades, pois ele é capaz de respeitar as regras de prioridade dos clientes CLUB e MEIA ENTRADA.
 
 # Fase 2
-https://github.com/ferreiraalves/puc-sistemas-operacionais-tp1/tree/totem-simulation
+https://github.com/ferreiraalves/puc-sistemas-operacionais-tp1/tree/phase-2
 
 Nesta etapa, foi necessário realizar uma simulação do paralelismo entre vários terminais de atendimento. Para tanto uma nova classe `Totem` foi implementada.
 Esta classe se torna responsável pelo gerenciamento dos atendimentos, sendo que cada totem só pode iniciar um atendimento após finalizar o atual.
