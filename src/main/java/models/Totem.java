@@ -8,9 +8,14 @@ import java.util.HashMap;
 public class Totem {
     private InputLine currentLine;
     private int ticksLeft;
+    private int totemId;
 
     public Totem() {
 
+    }
+
+    public Totem(int i) {
+        this.totemId = i;
     }
 
     public InputLine getCurrentLine() {
@@ -33,8 +38,12 @@ public class Totem {
         return currentLine == null;
     }
 
-    public void tick(){
+    public int getTotemId() {
+        return totemId;
+    }
 
+    public void setTotemId(int totemId) {
+        this.totemId = totemId;
     }
 
     public void start(InputLine line, Seat newSeat) {
@@ -47,7 +56,7 @@ public class Totem {
     }
 
     public void finish(HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, HashMap<String, Sale> report){
-        ProcessLine.processLine(this.currentLine, theather, report);    //processes line
+        ProcessLine.processLine(this.currentLine, theather, report, totemId);    //processes line
         this.currentLine = null;                                        // "resets" totem
     }
 

@@ -9,7 +9,7 @@ public class InitTotems {
         ReadConfig rc = new ReadConfig();
         ArrayList<Totem> totems = new ArrayList<Totem>();
         for (int i = 0; i<rc.getTotems(); i++){
-            totems.add(new Totem());
+            totems.add(new Totem(i));
         }
         return totems;
     }

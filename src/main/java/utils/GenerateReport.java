@@ -69,6 +69,7 @@ public class GenerateReport {
         System.out.println("Vendas: " + globalSales);
         System.out.println("Assentos: " + globalSeats);
         System.out.println("Percentual vendido: " + String.format("%.02f", (float) globalSales / (float) globalSeats *100) + "%");
+        System.out.println();
 
         System.out.println("#########REPORT SECOND PHASE#########");
         System.out.println();
