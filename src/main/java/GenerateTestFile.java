@@ -7,7 +7,7 @@ public class GenerateTestFile {
 
     public static void main(String[] args) {
 
-        int lines = 1000;
+        int lines = 10;
 
         try {
             FileWriter out = new FileWriter("input.txt");

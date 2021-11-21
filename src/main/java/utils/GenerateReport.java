@@ -74,7 +74,7 @@ public class GenerateReport {
         System.out.println("#########REPORT SECOND PHASE#########");
         System.out.println();
         System.out.println("Iterações: " + ticks);
-        System.out.println("Tempo simulado: " + ticks/60 + ":" + ticks%60);
+        System.out.println("Tempo simulado: " + ticks/60 + ":" + String.format("%02d", ticks%60));
 
 
     }

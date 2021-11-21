@@ -102,4 +102,52 @@ Portanto, podemos considerar que este tipo de execução consegue respeitar a de
 ## Conclusão
 
 Apesar de gerar uma venda maior de ingressos, o modelo Fifo não é ideal no caso apresentado pois poderia gerar uma insatisfação muito grande em clientes prioritários. Para a demanda apresentada no trabalho,
-nosso grupo sugere a utilização do sistema de prioridades pois ele é capaz de respeitar as regras de prioridade dos clientes CLUB e MEIA ENTRADA.
+nosso grupo sugere a utilização do sistema de prioridades, pois ele é capaz de respeitar as regras de prioridade dos clientes CLUB e MEIA ENTRADA.
+
+
+# Fase 2
+
+Nesta etapa, o é necessário realizar uma simulação do parelismo entre vários terminais de atendimento. Para tanto uma nova classe `Totem` foi implementada. 
+Esta classe se torna responsável pelo gerenciamento dos atendimentos, sendo que cada totem só pode iniciar um atendimento após finalizar o atual.
+
+## Alterações
+- O arquivo de configuração agora aceita um valor para o número de totens de atendimento:
+```
+10x20
+14:30,17:00,20:30
+2
+```
+- O input gerado agora conta com um novo valor para determinar quando o próximo cliente chegará:
+```
+E03;14:30;CSP;T;C;7;4;
+B03;14:30;CSP;T;M;6;4;
+G13;20:30;CSP;D;R;1;7;
+G11;20:30;CXX;T;C;8;6;
+E10;17:00;CSP;T;C;1;4;
+E12;14:30;CSX;D;M;5;9;
+J13;14:30;CXX;D;R;2;9;
+C12;14:30;CSP;D;R;5;9;
+G17;14:30;CSP;T;R;5;4;
+H02;20:30;CSP;T;R;2;9;
+D11;17:00;CSP;D;R;9;7;
+```
+- O output agora mostra qual totem for responsável pelo atendimento de cada cliente:
+```
+Client 0	Totem 0		CLUB		E3		14:30		confirmou
+Client 2	Totem 0		REGULAR		G13		20:30		confirmou
+Client 1	Totem 1		HALF		B3		14:30		confirmou
+Client 4	Totem 1		CLUB		E10		17:00		confirmou
+Client 3	Totem 0		CLUB		G11		20:30		desistiu
+Client 5	Totem 0		HALF		E12		14:30		desistiu
+Client 6	Totem 0		REGULAR		J13		14:30		desistiu
+Client 7	Totem 0		REGULAR		C12		14:30		confirmou
+Client 8	Totem 0		REGULAR		G17		14:30		confirmou
+Client 9	Totem 1		REGULAR		H2		20:30		confirmou
+```
+- O output agora mostra um relatório de quantos `ticks` foram necessários para concluir a simulação:
+```
+#########REPORT SECOND PHASE#########
+
+Iterações: 66
+Tempo simulado: 1:06
+```
