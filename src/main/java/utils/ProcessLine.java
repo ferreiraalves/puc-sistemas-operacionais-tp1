@@ -1,5 +1,6 @@
 package utils;
 
+import enums.SeatStatus;
 import models.InputLine;
 import models.Sale;
 import models.Seat;
@@ -13,8 +14,26 @@ public class ProcessLine {
                 + line.getSeatNumber() + "\t" + line.getShowtime() + "\t" + status);
     }
 
+    public static void initLine(InputLine line, HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, HashMap<String, Sale> report){
+        if(Validations.isSeatFree(theather,line)){
+            Seat seat = Validations.findSeat(theather, line);
+            seat.setStatus(SeatStatus.RESERVED);
+        }else{                                   // seat taken
+            if (line.getBehavior().equals("T")){  // tries to find a new seat
+                Seat seat = Validations.findNewSeat(theather, line);
+                if (seat != null){
+                    seat.setStatus(SeatStatus.RESERVED);
+                }else{                                                              // could not find new seat
+                    out(line, "ocupado - não encontrou outro");
+                }
+            }else{                                                          // did not try to find a new seat
+                out(line, "ocupado - desistiu");
+            }
+        }
+    }
+
     public static void processLine(InputLine line, HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, HashMap<String, Sale> report){
-        if(Validations.isSeatFree(theather, line)){         // checks if seat is free
+        if(Validations.isSeatFree(theather, line, line.getIndex())){         // checks if seat is free
             if(Validations.finishPurchase(line)){           // checks clients actions
                 Purchase.processPurchase(theather, line);
                 report.get(line.getShowtime()).registerSale();

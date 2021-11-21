@@ -7,7 +7,7 @@ public class Seat {
     String id;
     SeatStatus status;
     Client client;
-    String clientId;
+    Integer clientId;
 
     public Seat() {
         this.status = SeatStatus.FREE;
@@ -38,11 +38,11 @@ public class Seat {
         this.client = client;
     }
 
-    public String getClientId() {
+    public Integer getClientId() {
         return clientId;
     }
 
-    public void setClientId(String clientId) {
+    public void setClientId(Integer clientId) {
         this.clientId = clientId;
     }
 
