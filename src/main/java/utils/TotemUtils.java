@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class TotemUtils {
 
-    public static ArrayList<Totem> totems = InitTotems.getTotems();
+    public static ArrayList<Totem> totems = InitTotems.getTotems(); //initializes totem utils
 
     public static Totem findEmptyTotem(){
         for (Totem t : totems){
@@ -22,7 +22,7 @@ public class TotemUtils {
 
     public static void tick(HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, HashMap<String, Sale> report) {
         for (Totem t : totems){
-            t.tick(theather, report);
+            t.tick(theather, report);               //moves time forward for every totem
         }
     }
 }

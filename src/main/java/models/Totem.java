@@ -47,14 +47,14 @@ public class Totem {
     }
 
     public void finish(HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, HashMap<String, Sale> report){
-        ProcessLine.processLine(this.currentLine, theather, report);
-        this.currentLine = null;
+        ProcessLine.processLine(this.currentLine, theather, report);    //processes line
+        this.currentLine = null;                                        // "resets" totem
     }
 
     public void tick(HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather, HashMap<String, Sale> report) {
         if (this.currentLine != null){
             this.ticksLeft--;
-            if (this.ticksLeft == 0){
+            if (this.ticksLeft == 0){               //if theres no ticks left, completes action defined in input line
                 finish(theather, report);
             }
         }

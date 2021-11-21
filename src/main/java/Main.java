@@ -24,13 +24,13 @@ public class Main {
 
         while (!inputLines.isEmpty()){
             Totem freeTotem = TotemUtils.findEmptyTotem();
-            if (freeTotem != null && nextClient <= 0){
+            if (freeTotem != null && nextClient <= 0){              // checks if there's a free totem and if new client has arrived
                 InputLine currentLine = inputLines.remove(0);
-                freeTotem.start(currentLine, Validations.findSeat(theather,currentLine));
-                nextClient = currentLine.getNextClient();
+                freeTotem.start(currentLine, Validations.findSeat(theather,currentLine));   //assigns client to totem, reserves seat
+                nextClient = currentLine.getNextClient();                                   //updates when the next client will arrive
             }
-            nextClient --;
-            TotemUtils.tick(theather, report);
+            nextClient --;                              //
+            TotemUtils.tick(theather, report);         //   These move simulation time forward
             ticks++;
         }
 
