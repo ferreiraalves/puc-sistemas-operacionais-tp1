@@ -56,4 +56,12 @@ public class ReadConfig {
     public void setShowtimes(String[] showtimes) {
         this.showtimes = showtimes;
     }
+
+    public Integer getTokens() {
+        return tokens;
+    }
+
+    public void setTokens(Integer tokens) {
+        this.tokens = tokens;
+    }
 }
