@@ -10,6 +10,7 @@ public class ReadConfig {
     Integer rows;
     Integer columns;
     String[] showtimes;
+    Integer tokens;
 
     public ReadConfig() {
         try {
@@ -22,6 +23,9 @@ public class ReadConfig {
 
             data = myReader.nextLine();
             showtimes = data.split(",");
+
+            data = myReader.nextLine();
+            tokens = parseInt(data);
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");

@@ -17,6 +17,7 @@ public class GenerateTestFile {
                         Generator.randomActions() + ";" +
                         Generator.randomBehavior() + ";" +
                         Generator.randomClientType() + ";" +
+                        Generator.randomTime() + ";" +
                         Generator.randomTime() + ";" +"\n");
             }
             out.close();
