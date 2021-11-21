@@ -172,7 +172,7 @@ Os resultados podem ser observados na tabela abaixo:
 Com base nos resultados, podemos perceber que o experimento foi bem sucedido. Ao aumentarmos o número de terminais, reduzimos o tempo necessário para realizar o processamento das entradas.
 
 Em relação a questão do número ideal de totens levantada na proposta desta etapa, percebemos que a adição de novos terminais de atendimento possui retornos reduzidos. Ou seja, a partir de um determinado número de terminais, não existem ganhos nas métricas.
-Em nosso experimento a adição do terminal número 5 demonstra isso com clareza, pois apresentou os mesmos resultados da simulação realizada com 4 terminais. Com isso, percebemos que os ganhos significativos ocorreram ao utilizarmos 2 ou 3 terminais. Sendo que o ganho com 3 terminais foi consideravelmente menor.
+Em nosso experimento a adição do terminal número 5 demonstra isso com clareza, pois apresentou os mesmos resultados da simulação realizada com 4 terminais. Com isso, percebemos que os ganhos significativos ocorreram ao utilizarmos 2 ou 3 terminais. Sendo que o ganho com 2 terminais foi consideravelmente menor.
 
 Sendo assim a recomendação do grupo é que sejam instalados 2 terminais de atendimento, pois novos terminais subsequentes podem não valer o custo com base no benefício apresentado.
 É possível que a instalação de um terceiro terminal faça sentido, mas deve-se analisar se o custo justifica um ganho de apenas 2.70%.
