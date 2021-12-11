@@ -6,11 +6,12 @@ import utils.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
+
 
 public class Main {
 
-    public static void main(String[] args) {
-
+    public static void simulate(){
         HashMap<String, HashMap<String, HashMap<Integer, Seat>>> theather = InitTheather.getTheather();
         ArrayList<InputLine> inputLines = ReadInput.readInput();
         HashMap<String, Sale> report = new HashMap<String, Sale>();
@@ -35,6 +36,20 @@ public class Main {
         }
 
         GenerateReport.generateReport(report, ticks);
+
+    }
+
+    public static void main(String[] args) {
+
+        Scanner keyboard = new Scanner(System.in);
+
+        while (true){
+            System.out.println("Enter command: ");
+//            String command = keyboard.nextLine();
+            String command = "simular -log tela -pontos 5";
+            System.out.println(command);
+            ConfigUtils.updateConfig(command);
+        }
 
     }
 }
