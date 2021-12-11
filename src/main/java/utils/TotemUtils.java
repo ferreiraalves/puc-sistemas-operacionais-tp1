@@ -25,4 +25,9 @@ public class TotemUtils {
             t.tick(theather, report);               //moves time forward for every totem
         }
     }
+
+    public static void updateTotemNumber(int n){
+        totems = InitTotems.getTotems(n);
+    }
+
 }
