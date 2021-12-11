@@ -6,12 +6,12 @@ import java.util.HashMap;
 
 public class ConfigUtils {
 
-    public static String mainCommand;
-    public static HashMap <String, String> parameters;
-    public static String inputFile = "input.txt";
-    public static String outputFile = "output.txt";
-    public static String log = "tela";
-    public static int tokens = 2;
+    private static String mainCommand;
+    private static HashMap <String, String> parameters;
+    private static String inputFile = "input.txt";
+    private static String outputFile = "output.txt";
+    private static String log = "tela";
+    private static int totems = 2;
 
     public static String getMainCommand() {
         return mainCommand;
@@ -53,12 +53,12 @@ public class ConfigUtils {
         ConfigUtils.log = log;
     }
 
-    public static int getTokens() {
-        return tokens;
+    public static int getTotems() {
+        return totems;
     }
 
-    public static void setTokens(int tokens) {
-        ConfigUtils.tokens = tokens;
+    public static void setTotems(int totems) {
+        ConfigUtils.totems = totems;
     }
 
     private static String validateMainCommand(String[] aux) {
@@ -90,7 +90,6 @@ public class ConfigUtils {
                 validateParameter(i, parametersString);
             }
         }
-
     }
 
     private static void updateVaules() {
@@ -98,7 +97,7 @@ public class ConfigUtils {
             if(parameterKey.equals("log")){
                 log = parameters.get(parameterKey);
             }else if(parameterKey.equals("pontos")){
-                tokens = Integer.parseInt(parameters.get(parameterKey));
+                totems = Integer.parseInt(parameters.get(parameterKey));
             }else if(parameterKey.equals("in")){
                 inputFile = parameters.get(parameterKey);
             }else if(parameterKey.equals("out")){

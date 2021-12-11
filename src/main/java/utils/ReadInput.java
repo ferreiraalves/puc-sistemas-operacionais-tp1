@@ -32,4 +32,27 @@ public class ReadInput {
         return lines;
 
     }
+
+    public static ArrayList<InputLine> readInput(String inputFile){
+        Integer index = 0;
+        //This reads the input files, parses into InputLine class and returns as array
+        ArrayList<InputLine> lines = new ArrayList<>();
+        try {
+            File myObj = new File(inputFile);
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                String[] tokens = data.split(";");
+                lines.add(new InputLine(tokens, index)) ;
+                index++;
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        return lines;
+
+    }
 }

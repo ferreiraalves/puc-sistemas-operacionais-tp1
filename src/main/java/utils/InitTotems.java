@@ -13,4 +13,12 @@ public class InitTotems {
         }
         return totems;
     }
+
+    public static ArrayList<Totem> getTotems(int n) {
+        ArrayList<Totem> totems = new ArrayList<Totem>();
+        for (int i = 0; i<n; i++){
+            totems.add(new Totem(i));
+        }
+        return totems;
+    }
 }
