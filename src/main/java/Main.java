@@ -49,9 +49,9 @@ public class Main {
     public static void setOutput(){
         try {
             if(ConfigUtils.getLog().equals("tela")){
-                System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+                System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));      //This prints to console
             }else if (ConfigUtils.getLog().equals("arquivo")){
-                System.setOut(new PrintStream(ConfigUtils.getOutputFile()));
+                System.setOut(new PrintStream(ConfigUtils.getOutputFile()));     //This prints to file based on user configuration
             }
         }catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -66,31 +66,32 @@ public class Main {
         String command = null;
 
         while (!Objects.equals(command, "finalizar")){
-            System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
-            System.out.println("Enter command: ");
-            command = keyboard.nextLine();
-            ConfigUtils.updateConfig(command);
-            setOutput();
-            switch (ConfigUtils.getMainCommand()) {
-                case "simular":
-                    report = simulate();
-                    System.out.flush();
-                    break;
-                case "alterar":
-                    for (String key : ConfigUtils.getParameters().keySet()) {
-                        System.out.println(key + "\t->\t" + ConfigUtils.getParameters().get(key));
-                    }
-                    System.out.println("Configurações alteradas");
-                    System.out.flush();
-                    break;
-                case "totalizar":
-                    if (report != null) {
-                        GenerateReport.generateReport(report, ticks);
-                    } else {
-                        System.out.println("No simulations to report yet!");
-                    }
-                    System.out.flush();
-                    break;
+            try {
+                System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));   //Guarantees Enter command message always show up on console.
+                System.out.println("Enter command: ");
+                command = keyboard.nextLine();
+                ConfigUtils.updateConfig(command);       //Updates configuration based on parameters
+                setOutput();                            //Configures Standard output
+                switch (ConfigUtils.getMainCommand()) {
+                    case "simular":                     //runs simulation if simular command is given
+                        report = simulate();
+                        break;
+                    case "alterar":                      //Changes configuration without executing anything
+                        for (String key : ConfigUtils.getParameters().keySet()) {
+                            System.out.println(key + "\t->\t" + ConfigUtils.getParameters().get(key));   //Prints changes made based on parameters
+                        }
+                        System.out.println("Configurações alteradas");
+                        break;
+                    case "totalizar":                       //runs report generation if totalizar command is given
+                        if (report != null) {
+                            GenerateReport.generateReport(report, ticks);
+                        } else {
+                            System.out.println("No simulations to report yet!");   //makes sure a simulation was executed before generating report
+                        }
+                        break;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
             }
 
         }

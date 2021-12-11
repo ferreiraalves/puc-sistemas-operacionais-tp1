@@ -70,7 +70,7 @@ public class ConfigUtils {
         }
     }
 
-    private static void validateParameter(int i, String[] parametersString) {
+    private static void validateParameter(int i, String[] parametersString) {      //checks corresponding value for parameter
         try {
             if (parametersString[i + 1].contains("-")){
                 throw new InvalidParameterException();
@@ -86,14 +86,14 @@ public class ConfigUtils {
         parameters = new HashMap<String, String>();
         String [] parametersString = Arrays.copyOfRange(aux, 1, aux.length);
         for (int i = 0; i < parametersString.length; i++){
-            if(parametersString[i].matches("-log|-pontos|-in|-out")){
+            if(parametersString[i].matches("-log|-pontos|-in|-out")){   //checks if current token is valid parameter
                 validateParameter(i, parametersString);
             }
         }
     }
 
-    private static void updateVaules() {
-        for(String parameterKey : parameters.keySet()){
+    private static void updateVaules() {                    //updates configuration based on parameters
+        for(String parameterKey : parameters.keySet()){     //only passed parameters will be updated
             if(parameterKey.equals("log")){
                 log = parameters.get(parameterKey);
             }else if(parameterKey.equals("pontos")){
@@ -108,9 +108,9 @@ public class ConfigUtils {
 
     public static void updateConfig(String command){
         String [] tokens = command.split(" ");
-        mainCommand = validateMainCommand(tokens);
-        parseParameters(tokens);
-        updateVaules();
+        mainCommand = validateMainCommand(tokens);      //checks if a valid command was passed
+        parseParameters(tokens);                        //parses parameters
+        updateVaules();                                 //updates config values
 
     }
 
