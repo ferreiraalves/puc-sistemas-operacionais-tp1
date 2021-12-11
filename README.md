@@ -182,32 +182,32 @@ Sendo assim a recomendação do grupo é que sejam instalados 2 terminais de ate
 
 # Fase 3
 
-Nesta fase foi pedido que o gerenciamento da aplicação possa ser feito a partir de forma semelhante a uma CLI, ou seja, tornar o programa capaz de receber parametos.
+Nesta fase foi pedido que o gerenciamento da aplicação possa ser feito a partir de forma semelhante a uma CLI, ou seja, tornar o programa capaz de receber parâmetros.
 Com isso, ao executarmos a aplicação o usuário agora se depara com a seguinte mensagem:
 
 ```console
 Enter command: 
 ```
 
-A entrada dos comando segue o modelo abaixo. No caso, apenas um comando deve ser passado embora vários parametros sejam permitidos.
-Caso sejam enviados parametros ou comandos não reconhecidos pela CLI uma mensagem de erro é exibida. O mesmo ocorre caso um parametro seja passado sem um valor equivalente.
+A entrada dos comandos segue o modelo abaixo. No caso, apenas um comando deve ser passado, embora vários parâmetros sejam permitidos.
+Caso sejam enviados parâmetros ou comandos não reconhecidos pela CLI uma mensagem de erro é exibida. O mesmo ocorre caso um parâmetro seja passado sem um valor equivalente.
 ```
-comando [parametro valor]
+comando [parâmetro valor]
 ```
 ### Comandos disponíveis
 - **simular**: executa a simulação de venda de ingressos.
-- **alterar**: altera os valores de configuração com base nos parametros.
+- **alterar**: altera os valores de configuração com base nos parâmetros.
 - **totalizar**: Gera os relatórios finais das fases 1 e 2 com base na última simulação.
 - **finalizar**: Finaliza a CLI.
 
-### Parâmetros dispoíveis
-- **log**: define a saida do output. Valores: (tela, arquivo). `default: tela`
+### Parâmetros disponíveis
+- **log**: define a saída do output. Valores: (tela, arquivo). `default: tela`
 - **in**: Define o arquivo de entrada para a simulação. `default: input.txt`
-- **out**: No caso de output para arquivo, define o arquivo de saida. `default: output.txt`
-- **pontos**: Define quantos totens serão usados na simulacão. `default: 2`
+- **out**: No caso de output para arquivo, define o arquivo de saída. `default: output.txt`
+- **pontos**: Define quantos totens serão usados na simulação. `default: 2`
 
 
-## Exemplos de utilizção
+## Exemplos de utilização
 
 ###Simulação com 5 totens:
 ```console
@@ -221,7 +221,7 @@ simular -pontos 5
 
 ### Comparação entre execuções com o arquivo de entrada 1 e 2
 
-Este exemplo executa duas simulações com o log da simulação impresso no console e gera relatórios em arquivos de saida distintos para cada execução.
+Este exemplo executa duas simulações com o log da simulação impresso no console e gera relatórios em arquivos de saída distintos para cada execução.
 
 ```console
 simular -log tela -in input1.txt
@@ -232,8 +232,8 @@ totalizar -log aquivo -out output2.txt
 ```
 
 ## Conclusão
-Devido à forma como o trabalho foi planejado e executado, foi relativamente simples criar uma interface CLI para configuração e execução da simuilação e do relatório. 
+Devido à forma como o trabalho foi planejado e executado, foi relativamente simples criar uma interface CLI para configuração e execução da simulação e do relatório.
 A implementação da CLI tornou a ferramenta mais dinâmica, possibilitando a execução de diversos testes por parte de um potencial cliente sem a necessidade
-de alterção do código.
+de alteração do código.
 
 Trabalho 10/10, faria de novo.
